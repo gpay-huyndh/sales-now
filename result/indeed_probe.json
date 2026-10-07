@@ -4,8 +4,8 @@
     "status": 403,
     "interesting_headers": {
       "server": "cloudflare",
-      "cf-ray": "a4693ece6f3a06ff-HKG",
-      "set-cookie": "__cf_bm=BM9HfnHBoqkPcGAfjqEgCXMqAGZ2tQgKR4bOg92q.lQ-1791337725.1847582-1.0.1.1-jrAUQS2O0Z_2IEZl0iaX7iCYPJZ7GZph5a.LZQ6gHnH4.sW4F2FG1GG9R0sh0DXLBAzM9hJBzzlMAr6NXZ7ig.ZGxpGLOdfm0xMV7RaslYWsZBE8kbeuaVOJdlSMijgo217GYTtP70jusmRTpbmpQRfTIH34g3G.Z2_h8VZAGqw; HttpOnly; SameSite=None; Secure; Path=/; Domain=indeed.com; Expires=Wed, 07 Oct 2026 02:18:45 GMT",
+      "cf-ray": "a469653d7f2306ff-HKG",
+      "set-cookie": "__cf_bm=6VZjmDKMXW1b8lBsbT8G2o8qO6xLXse93aNcoOfl060-1791339299.4392357-1.0.1.1-0w3JnbVh1KQgvPAjqqMbmWy9wj5a41n6lXQ3gFujGLtw6FKCI0bQPZo82v2NGkPg2WwXfD9tNyOsbeiApG7Y4oMaDo.s2ENz59qSyy255K3a2DtxgVsEHnmohYZ7Lk1xerE4zP2k6Chv5gFDshLLwDqZkEMlrIr8wdGH4ytw0eU; HttpOnly; SameSite=None; Secure; Path=/; Domain=indeed.com; Expires=Wed, 07 Oct 2026 02:44:59 GMT",
       "content-type": "text/html; charset=UTF-8"
     },
     "signatures_found": [
@@ -23,15 +23,15 @@
     "status": 200,
     "interesting_headers": {
       "server": "cloudflare",
-      "cf-ray": "a4693ed17d8a06ff-HKG",
-      "set-cookie": "DD_VERSION=jobseeker-frontend:31a2b1ed8731d3d279cb5d6f7a89e5e55fecea3a; path=/; domain=.indeed.com; samesite=lax; secure; httponly, CTK=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; secure; httponly, indeed_rcc=CTK; path=/; expires=Mon, 06 Oct 2031 01:48:45 GMT; domain=indeed.com; samesite=none; secure, CTK=1k4a0ovoiir99bnl; path=/; expires=Mon, 06 Oct 2031 01:48:45 GMT; domain=indeed.com; samesite=none; secure, CTK=; Max-Age=0; Path=/; Secure; SameSite=None, CTK=1k4a0ovon2ait001; Domain=.indeed.com; Max-Age=157680000; Path=/; Secure; SameSite=None, RF=\"TFTzyBUJoNr6YttPP3kyivpZ6-9J49o-Uk3iY6QNQqKE2fh7FyVgtXOY13em2tJFYhKELCAnrKI=\";Version=1;Domain=.indeed.com;Path=/;Expires=Tue, 5 Jan 2027 01:48:45 GMT;Max-Age=7776000, mobnode=\"\";Version=1;Domain=.indeed.com;Path=/;Expires=Thu, 01 Jan 1970 00:00:00 GMT;Max-Age=0, CSRF=dbdrL3oN0MANwciYMI9F82WXq4wc02we;Domain=.indeed.com;Path=/, INDEED_CSRF_TOKEN=LrtEqoCSsykVg6R7slXpSOcrH7dYLt8p;Path=/;Secure, LV=LA=1791337725:CV=1791337725:TS=1791337725;Path=/;Expires=Mon, 6 Oct 2031 01:48:45 GMT;Max-Age=157680000, ras=\"\";Version=1;Path=/;Expires=Thu, 01 Jan 1970 00:00:00 GMT;Max-Age=0, RQ=q=remote&l=&ts=1791337725735;Path=/;Expires=Mon, 6 Oct 2031 01:48:45 GMT;Max-Age=157680000, PP=1;Path=/m, __cf_bm=7IiTy5whDRXozWv555Izl.4ijEsbxLcuZZpPc9QBHyw-1791337725.6721783-1.0.1.1-O7z0gGrA_4PXnEWhuuW4b_4YZzWFIU.UVmDKNii3XkbNkYGhOWRvh4DJMccebRDVSFjRPoH9FVQv8dKVfJvUd8dvzECtQcvLoDOFyV2cyimQOBofD_V0vhHRB_OULVyUSAlg3krwebiHiRSNjXGzUSTGKzjDtPq5kxMSrTD1.fs; HttpOnly; SameSite=None; Secure; Path=/; Domain=indeed.com; Expires=Wed, 07 Oct 2026 02:18:45 GMT, _cfuvid=HPmXexFwiLm_tAgWvdnAIty8Ez9_ZB29kr4QIku7WNw-1791337725.6721783-1.0.1.1-Xj0ZfpfutZYZRfEoiH.km3B2oG1MTCxGnlD85Jcdu6o; HttpOnly; SameSite=None; Secure; Path=/; Domain=indeed.com",
+      "cf-ray": "a469653f9bba06ff-HKG",
+      "set-cookie": "DD_VERSION=jobseeker-frontend:31a2b1ed8731d3d279cb5d6f7a89e5e55fecea3a; path=/; domain=.indeed.com; samesite=lax; secure; httponly, CTK=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; secure; httponly, indeed_rcc=CTK; path=/; expires=Mon, 06 Oct 2031 02:14:59 GMT; domain=indeed.com; samesite=none; secure, CTK=1k4a290v8gergf5m; path=/; expires=Mon, 06 Oct 2031 02:14:59 GMT; domain=indeed.com; samesite=none; secure, CTK=; Max-Age=0; Path=/; Secure; SameSite=None, CTK=1k4a290vbgf7k800; Domain=.indeed.com; Max-Age=157680000; Path=/; Secure; SameSite=None, RF=\"TFTzyBUJoNr6YttPP3kyivpZ6-9J49o-Uk3iY6QNQqKE2fh7FyVgtVGH1oRwu3eaSWvy_E2VKeY=\";Version=1;Domain=.indeed.com;Path=/;Expires=Tue, 5 Jan 2027 02:14:59 GMT;Max-Age=7776000, mobnode=\"\";Version=1;Domain=.indeed.com;Path=/;Expires=Thu, 01 Jan 1970 00:00:00 GMT;Max-Age=0, CSRF=AcLQW94FDNVbgTvPpyA5QTP7lRoHLGSq;Domain=.indeed.com;Path=/, INDEED_CSRF_TOKEN=lb3WomWsLiITC68pY2n2YoMrKPr5mGmB;Path=/;Secure, LV=LA=1791339299:CV=1791339299:TS=1791339299;Path=/;Expires=Mon, 6 Oct 2031 02:14:59 GMT;Max-Age=157680000, ras=\"\";Version=1;Path=/;Expires=Thu, 01 Jan 1970 00:00:00 GMT;Max-Age=0, RQ=q=remote&l=&ts=1791339299834;Path=/;Expires=Mon, 6 Oct 2031 02:15:00 GMT;Max-Age=157680000, PP=1;Path=/m, __cf_bm=q4wH4xXQP5qUgDDdd.rziVssrfchgJgvUi3o0ZAdpAc-1791339299.7743561-1.0.1.1-fmQpjCAr8zb7Iyaki3h28Sd6m6fwGx_RPJZbBFkhmO002uPN0Mq3HKsqkoq3nvy4rwIPvM29F8bCKK8p8PEhhLu9U17MilcrivhCcREvANsL1SKduOjvWCh6849BhxCr0lWbibg.2p612XLDE_FbpQP75OWSiZW53E3vIxDO3T0; HttpOnly; SameSite=None; Secure; Path=/; Domain=indeed.com; Expires=Wed, 07 Oct 2026 02:45:00 GMT, _cfuvid=1rD42NDTiadt379lKbjYVQx2fB.PCE0_ZAl2BwmmpHA-1791339299.7743561-1.0.1.1-1zl0p3_Z9y9QjLkhUmnIVyislGQbg6HnbOnZywm7Lck; HttpOnly; SameSite=None; Secure; Path=/; Domain=indeed.com",
       "content-type": "text/html; charset=utf-8"
     },
     "signatures_found": [
       "challenge"
     ],
     "job_cards_found": 32,
-    "body_len": 999295,
+    "body_len": 1001508,
     "title": "3.000+ Remote Việc làm, tuyển dụng ở  ngày 7 tháng 10 năm 2026| Indeed"
   },
   {
@@ -39,14 +39,14 @@
     "status": 200,
     "interesting_headers": {
       "server": "cloudflare",
-      "cf-ray": "a4693ee7ce2e06ff-HKG",
+      "cf-ray": "a4696549fb3006ff-HKG",
       "content-type": "text/html; charset=utf-8"
     },
     "signatures_found": [
       "challenge"
     ],
     "job_cards_found": 32,
-    "body_len": 1037176,
+    "body_len": 1037166,
     "title": "3.000+ Remote Việc làm, tuyển dụng ở  ngày 7 tháng 10 năm 2026| Indeed",
     "navigator.webdriver": true
   },
@@ -55,14 +55,14 @@
     "status": 200,
     "interesting_headers": {
       "server": "cloudflare",
-      "cf-ray": "a4693f2a0e9d06ff-HKG",
+      "cf-ray": "a469657aae9506ff-HKG",
       "content-type": "text/html; charset=utf-8"
     },
     "signatures_found": [
       "challenge"
     ],
     "job_cards_found": 32,
-    "body_len": 1037005,
+    "body_len": 1042840,
     "title": "3.000+ Remote Việc làm, tuyển dụng ở  ngày 7 tháng 10 năm 2026| Indeed",
     "navigator.webdriver": true
   }

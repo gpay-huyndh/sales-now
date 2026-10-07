@@ -1,0 +1,271 @@
+[
+  {
+    "company": "ニッスイ",
+    "url": "https://www.nissui.co.jp/",
+    "head_office_address": "東京都港区西新橋1-3-1 西新橋スクエア",
+    "representative_name": "田中輝",
+    "representative_title": "代表取締役 社長執行役員",
+    "capital": "30,685百万円",
+    "established": null,
+    "source_url": "https://www.nissui.co.jp/corporate/index.html",
+    "verified": {
+      "head_office_address": true,
+      "representative_name": true,
+      "representative_title": true,
+      "capital": true
+    },
+    "model": "gemini-3.1-flash-lite",
+    "llm_calls": 4,
+    "prompt_tokens": 4188,
+    "completion_tokens": 530,
+    "cost_usd": 0.001842,
+    "pages_visited": [
+      "https://www.nissui.co.jp/corporate/index.html",
+      "https://www.nissui.co.jp/corporate.html",
+      "https://www.nissui.co.jp/corporate/identity/index.html",
+      "https://www.nissui.co.jp/corporate/history/index.html"
+    ],
+    "pages_count": 4,
+    "seconds": 32.5
+  },
+  {
+    "company": "Ｕｍｉｏｓ",
+    "url": "https://www.umios.com/",
+    "head_office_address": "〒108-8620　東京都港区高輪二丁目21番2号 THE LINKPILLAR 1 SOUTH",
+    "representative_name": "安田　大助",
+    "representative_title": "代表取締役社長執行役員 最高執行責任者",
+    "capital": "200億円",
+    "established": "1943-03",
+    "source_url": "https://www.umios.com/jp/corporate/outline/data/",
+    "verified": {
+      "head_office_address": true,
+      "representative_name": true,
+      "representative_title": true,
+      "capital": true,
+      "established": true
+    },
+    "model": "gemini-3.1-flash-lite",
+    "llm_calls": 1,
+    "prompt_tokens": 528,
+    "completion_tokens": 267,
+    "cost_usd": 0.000532,
+    "pages_visited": [
+      "https://www.umios.com/jp/corporate/outline/data/"
+    ],
+    "pages_count": 1,
+    "seconds": 5.9
+  },
+  {
+    "company": "ユキグニファクトリー",
+    "url": "https://www.yukiguni-factory.co.jp/",
+    "head_office_address": "新潟県南魚沼市余川89番地",
+    "representative_name": "湯澤 尚史",
+    "representative_title": "代表取締役社長",
+    "capital": "100百万円",
+    "established": "1983-07",
+    "source_url": "https://www.yukiguni-factory.co.jp/company/gaiyou/",
+    "verified": {
+      "head_office_address": true,
+      "representative_name": true,
+      "representative_title": true,
+      "capital": true,
+      "established": true
+    },
+    "model": "gemini-3.1-flash-lite",
+    "llm_calls": 1,
+    "prompt_tokens": 1064,
+    "completion_tokens": 186,
+    "cost_usd": 0.000545,
+    "pages_visited": [
+      "https://www.yukiguni-factory.co.jp/company/gaiyou/"
+    ],
+    "pages_count": 1,
+    "seconds": 6.2
+  },
+  {
+    "company": "サカタのタネ",
+    "url": "https://www.sakataseed.co.jp/",
+    "head_office_address": "〒224-0041 神奈川県横浜市都筑区仲町台二丁目7番1号",
+    "representative_name": "加々美　勉",
+    "representative_title": "代表取締役社長",
+    "capital": "135億円",
+    "established": "1942-12",
+    "source_url": "https://corporate.sakataseed.co.jp/company/profile.html",
+    "verified": {
+      "head_office_address": true,
+      "representative_name": true,
+      "representative_title": true,
+      "capital": true,
+      "established": true
+    },
+    "model": "gemini-3.1-flash-lite",
+    "llm_calls": 1,
+    "prompt_tokens": 907,
+    "completion_tokens": 216,
+    "cost_usd": 0.000551,
+    "pages_visited": [
+      "https://corporate.sakataseed.co.jp/company/profile.html"
+    ],
+    "pages_count": 1,
+    "seconds": 5.9
+  },
+  {
+    "company": "ホクト",
+    "url": "https://www.hokto-kinoko.co.jp/",
+    "head_office_address": "〒 381-8533　長野県長野市南堀138-1",
+    "representative_name": "水野雅義",
+    "representative_title": "代表取締役社長",
+    "capital": "55億円",
+    "established": null,
+    "source_url": "https://www.hokto-kinoko.co.jp/corporate/kigyou/gaiyou/",
+    "verified": {
+      "head_office_address": true,
+      "representative_name": true,
+      "representative_title": true,
+      "capital": true
+    },
+    "model": "gemini-3.1-flash-lite",
+    "llm_calls": 4,
+    "prompt_tokens": 4185,
+    "completion_tokens": 613,
+    "cost_usd": 0.001965,
+    "pages_visited": [
+      "https://www.hokto-kinoko.co.jp/corporate/kigyou/gaiyou/",
+      "https://www.hokto-kinoko.co.jp/corporate/kenkyu/gaiyou/",
+      "https://www.hokto-kinoko.co.jp/corporate/kigyou/",
+      "https://www.hokto-kinoko.co.jp/corporate/kigyou/message/"
+    ],
+    "pages_count": 4,
+    "seconds": 22.9
+  },
+  {
+    "company": "ショーボンドホールディングス",
+    "url": "https://www.sho-bondhd.jp/",
+    "head_office_address": "〒103-0015 東京都中央区日本橋箱崎町7番8号",
+    "representative_name": "岸本 達也",
+    "representative_title": "代表取締役社長",
+    "capital": "50億円",
+    "established": "2008-01",
+    "source_url": "https://www.sho-bondhd.jp/company/profile/",
+    "verified": {
+      "head_office_address": true,
+      "representative_name": true,
+      "representative_title": true,
+      "capital": true,
+      "established": true
+    },
+    "model": "gemini-3.1-flash-lite",
+    "llm_calls": 1,
+    "prompt_tokens": 1360,
+    "completion_tokens": 207,
+    "cost_usd": 0.000651,
+    "pages_visited": [
+      "https://www.sho-bondhd.jp/company/profile/"
+    ],
+    "pages_count": 1,
+    "seconds": 6.7
+  },
+  {
+    "company": "ミライト・ワン",
+    "url": "https://www.mirait-one.com/",
+    "head_office_address": "〒105-0001　東京都港区虎ノ門2-2-3",
+    "representative_name": "菅原 英宗",
+    "representative_title": "代表取締役社長　CEO",
+    "capital": "70億円",
+    "established": "2010-10",
+    "source_url": "https://www.mirait-one.com/corporate/profile/",
+    "verified": {
+      "head_office_address": true,
+      "representative_name": true,
+      "representative_title": true,
+      "capital": true,
+      "established": true
+    },
+    "model": "gemini-3.1-flash-lite",
+    "llm_calls": 1,
+    "prompt_tokens": 765,
+    "completion_tokens": 228,
+    "cost_usd": 0.000533,
+    "pages_visited": [
+      "https://www.mirait-one.com/corporate/profile/"
+    ],
+    "pages_count": 1,
+    "seconds": 7.3
+  },
+  {
+    "company": "タマホーム",
+    "url": "https://www.tamahome.jp/",
+    "head_office_address": "〒108-0074　東京都港区高輪3丁目22番9号 タマホーム本社ビル",
+    "representative_name": "玉木　康裕、玉木　伸弥",
+    "representative_title": "代表取締役会長、代表取締役社長",
+    "capital": "43億1,014万円",
+    "established": "1998-06",
+    "source_url": "https://www.tamahome.jp/company/profile/",
+    "verified": {
+      "head_office_address": true,
+      "representative_name": true,
+      "representative_title": true,
+      "capital": true,
+      "established": true
+    },
+    "model": "gemini-3.1-flash-lite",
+    "llm_calls": 1,
+    "prompt_tokens": 818,
+    "completion_tokens": 309,
+    "cost_usd": 0.000668,
+    "pages_visited": [
+      "https://www.tamahome.jp/company/profile/"
+    ],
+    "pages_count": 1,
+    "seconds": 6.6
+  },
+  {
+    "company": "極洋",
+    "url": "https://www.kyokuyo.co.jp/",
+    "head_office_address": null,
+    "representative_name": null,
+    "representative_title": null,
+    "capital": null,
+    "established": null,
+    "source_url": null,
+    "verified": {},
+    "model": null,
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": 0.0,
+    "pages_visited": [
+      "https://www.kyokuyo.co.jp/company/index.html",
+      "https://www.kyokuyo.co.jp/company/topmessage/index.html",
+      "https://www.kyokuyo.co.jp/company/point/index.html",
+      "https://www.kyokuyo.co.jp/company/data/index.html"
+    ],
+    "pages_count": 4,
+    "seconds": 399.1
+  },
+  {
+    "company": "日本アクア",
+    "url": "https://www.n-aqua.jp/",
+    "head_office_address": null,
+    "representative_name": null,
+    "representative_title": null,
+    "capital": null,
+    "established": null,
+    "source_url": null,
+    "verified": {},
+    "model": null,
+    "llm_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": 0.0,
+    "pages_visited": [
+      "https://www.n-aqua.jp/company/info.html",
+      "https://www.n-aqua.jp/company",
+      "https://www.n-aqua.jp/company/index.html",
+      "https://www.n-aqua.jp/company/",
+      "https://www.n-aqua.jp/company/branch.html"
+    ],
+    "pages_count": 5,
+    "seconds": 28.0
+  }
+]

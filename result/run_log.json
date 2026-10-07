@@ -1,0 +1,13 @@
+{
+  "model": "gemini/gemini-3.1-flash-lite",
+  "usage": {
+    "prompt_tokens": 13815,
+    "completion_tokens": 2556,
+    "cost": 0.00728775,
+    "calls": 14,
+    "models_used": {
+      "gemini-3.1-flash-lite": 14
+    }
+  },
+  "total_seconds": 521.1
+}

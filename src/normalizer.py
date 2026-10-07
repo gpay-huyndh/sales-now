@@ -1,14 +1,15 @@
 """Validation and normalisation of extracted fields."""
+
 from __future__ import annotations
 
 import re
-from typing import Any, Dict, Optional
+from typing import Any
 
 ERAS = {"明治": 1868, "大正": 1912, "昭和": 1926, "平成": 1989, "令和": 2019}
 _Z2H = str.maketrans("０１２３４５６７８９", "0123456789")
 
 
-def normalize_established(s: Optional[str]) -> Optional[str]:
+def normalize_established(s: str | None) -> str | None:
     """Return YYYY-MM from strings like '1943年3月', '昭和18年3月', '1943/03'."""
     if not s:
         return None
@@ -23,22 +24,22 @@ def normalize_established(s: Optional[str]) -> Optional[str]:
     return None
 
 
-def valid_address(s: Optional[str]) -> bool:
+def valid_address(s: str | None) -> bool:
     return bool(s) and bool(re.search(r"[都道府県]", s))
 
 
-def valid_capital(s: Optional[str]) -> bool:
+def valid_capital(s: str | None) -> bool:
     return bool(s) and bool(re.search(r"\d", s.translate(_Z2H))) and "円" in s
 
 
-def evidence_in_text(evidence: Optional[Dict[str, str]], text: str) -> Dict[str, bool]:
+def evidence_in_text(evidence: dict[str, str] | None, text: str) -> dict[str, bool]:
     """Anti-hallucination check: quoted snippet must appear (whitespace-insensitive)."""
     squash = lambda x: re.sub(r"\s+", "", x or "")
     t = squash(text)
     return {k: squash(v)[:20] in t for k, v in (evidence or {}).items() if v}
 
 
-def normalize(rec: Dict[str, Any]) -> Dict[str, Any]:
+def normalize(rec: dict[str, Any]) -> dict[str, Any]:
     out = dict(rec)
     out["established_raw"] = rec.get("established")
     out["established"] = normalize_established(rec.get("established"))
@@ -49,5 +50,14 @@ def normalize(rec: Dict[str, Any]) -> Dict[str, Any]:
     return out
 
 
-def missing_fields(rec: Dict[str, Any]) -> list:
-    return [k for k in ("head_office_address", "representative_name", "capital", "established") if not rec.get(k)]
+def missing_fields(rec: dict[str, Any]) -> list:
+    return [
+        k
+        for k in (
+            "head_office_address",
+            "representative_name",
+            "capital",
+            "established",
+        )
+        if not rec.get(k)
+    ]
