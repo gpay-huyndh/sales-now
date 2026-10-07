@@ -6,7 +6,7 @@
 
 Crawls the official websites of 10 listed companies by following links, and uses a generative AI (LLM) to extract the **head office address, representative name, capital, and date of establishment**. It uses no per-site selectors; a keyword-based link ranking handles every site generically.
 
-For the technology comparison and the Task B findings, see [docs/report.en.md](docs/report.en.md).
+For the technology comparison, see [docs/report.en.md](docs/report.en.md).
 
 ## 🚀 Live Demo (Streamlit App)
 🔗 **Online Access:** [https://sales-now.streamlit.app/](https://sales-now.streamlit.app/)
@@ -63,24 +63,7 @@ streamlit run src/app.py
 ```
 The UI will automatically open at `http://localhost:8501`.
 
-### Run Option B (Next.js + Firecrawl + Vercel AI SDK)
-This is a separate project in the `next-app` directory. You must configure `FIRECRAWL_API_KEY` and `GEMINI_API_KEY` in `next-app/.env.local`.
-```bash
-cd next-app
-npm install
-npm run dev
-```
-A beautifully designed modern UI will run at `http://localhost:3000`.
 
-The input is `input/companies.csv` (`name,url`).
-
-### Task B (Indeed investigation)
-
-```bash
-python src/indeed_probe.py
-```
-
-Sends one request per approach (4 in total) and saves the results to `result/indeed_probe.json` plus screenshots. The "headed" step opens a real Chrome window; leave it open until it finishes.
 
 ### Tests
 
@@ -95,7 +78,6 @@ python -m pytest -q tests
 | `result/companies.csv` | Extracted data (UTF-8 with BOM for Excel) plus model, tokens, cost, seconds |
 | `result/companies.json` | Same, plus visited URLs and evidence-check results |
 | `result/run_log.json` | Run totals: tokens, cost, time, and the model that actually answered |
-| `result/indeed_probe.json` | Task B experiment results |
 
 ## How it works (Architecture & Flow)
 

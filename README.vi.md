@@ -6,7 +6,7 @@
 
 Crawl website chính thức của 10 công ty niêm yết bằng cách đi theo các liên kết, rồi dùng AI tạo sinh (LLM) để trích xuất **địa chỉ trụ sở chính, tên người đại diện, vốn điều lệ, tháng/năm thành lập**. Công cụ không dùng selector riêng cho từng site; việc xếp hạng link theo từ khóa giúp xử lý mọi site theo cùng một logic.
 
-So sánh công nghệ và kết quả Bài B xem trong [docs/report.vi.md](docs/report.vi.md).
+So sánh công nghệ xem trong [docs/report.vi.md](docs/report.vi.md).
 
 ## 🚀 Live Demo (Streamlit App)
 🔗 **Truy cập trực tuyến:** [https://sales-now.streamlit.app/](https://sales-now.streamlit.app/)
@@ -63,24 +63,7 @@ streamlit run src/app.py
 ```
 Giao diện sẽ tự động mở tại `http://localhost:8501`.
 
-### Chạy Phương án B (Next.js + Firecrawl + Vercel AI SDK)
-Đây là dự án riêng trong thư mục `next-app`. Bạn cần cấu hình `FIRECRAWL_API_KEY` và `GEMINI_API_KEY` trong file `next-app/.env.local`.
-```bash
-cd next-app
-npm install
-npm run dev
-```
-Giao diện web hiện đại sẽ chạy ở `http://localhost:3000`.
 
-Đầu vào là `input/companies.csv` (`name,url`).
-
-### Bài B (khảo sát Indeed)
-
-```bash
-python src/indeed_probe.py
-```
-
-Gửi mỗi phương pháp 1 request (tổng 4 phương pháp) và lưu kết quả vào `result/indeed_probe.json` cùng ảnh chụp màn hình. Bước "headed" sẽ mở một cửa sổ Chrome thật; đừng đóng cho đến khi chạy xong.
 
 ### Chạy test
 
@@ -95,7 +78,6 @@ python -m pytest -q tests
 | `result/companies.csv` | Dữ liệu trích xuất (UTF-8 BOM để mở bằng Excel) kèm model, token, chi phí, thời gian |
 | `result/companies.json` | Như trên, thêm URL đã duyệt và kết quả kiểm tra bằng chứng |
 | `result/run_log.json` | Tổng token, chi phí, thời gian và model thực sự trả lời |
-| `result/indeed_probe.json` | Kết quả thí nghiệm Bài B |
 
 ## Cách hoạt động (Architecture & Flow)
 

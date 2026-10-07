@@ -6,7 +6,7 @@
 
 上場企業10社の公式サイトをリンクを辿ってクロールし、生成AI（LLM）で **本社住所・代表氏名・資本金・設立年月** を抽出します。サイトごとの個別セレクタは使わず、キーワードによるリンク順位付けで汎用的に処理します。
 
-技術選定の比較と課題Bの考察は [docs/report.md](docs/report.md) を参照してください。
+技術選定の比較は [docs/report.md](docs/report.md) を参照してください。
 
 ## 🚀 ライブデモ (Streamlit App)
 🔗 **オンラインアクセス:** [https://sales-now.streamlit.app/](https://sales-now.streamlit.app/)
@@ -63,24 +63,7 @@ streamlit run src/app.py
 ```
 自動的に `http://localhost:8501` でUIが開きます。
 
-### Option Bの実行（Next.js + Firecrawl + Vercel AI SDK）
-こちらは `next-app` ディレクトリにある独立したプロジェクトです。`next-app/.env.local` で `FIRECRAWL_API_KEY` と `GEMINI_API_KEY` を設定してください。
-```bash
-cd next-app
-npm install
-npm run dev
-```
-美しくデザインされたモダンなUIが `http://localhost:3000` で起動します。
 
-入力は `input/companies.csv`（`name,url`）です。
-
-### 課題B（Indeed の調査）
-
-```bash
-python src/indeed_probe.py
-```
-
-4種類の手法で1リクエストずつ送り、結果を `result/indeed_probe.json` とスクリーンショットに保存します。`headed` の手順でChromeウィンドウが開くため、閉じずにお待ちください。
 
 ### テスト
 
@@ -95,7 +78,6 @@ python -m pytest -q tests
 | `result/companies.csv` | 抽出結果（Excel対応のUTF-8 BOM付き）とモデル・トークン・費用・秒数 |
 | `result/companies.json` | 上記に加え、探索したURLと根拠の検証結果 |
 | `result/run_log.json` | 実行全体のトークン数・費用・時間・実際に応答したモデル |
-| `result/indeed_probe.json` | 課題Bの実験結果 |
 
 ## 処理の流れ (Architecture & Flow)
 
