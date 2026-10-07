@@ -2,9 +2,18 @@
 
 **Ngôn ngữ:** [日本語](README.md) | [English](README.en.md) | Tiếng Việt (file này)
 
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white) ![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?logo=streamlit&logoColor=white) ![Playwright](https://img.shields.io/badge/Playwright-Scraper-2EAD33?logo=playwright&logoColor=white) ![LiteLLM](https://img.shields.io/badge/LiteLLM-LLM-blueviolet) ![Gemini](https://img.shields.io/badge/Gemini-AI-8E75B2?logo=google-gemini&logoColor=white)
+
 Crawl website chính thức của 10 công ty niêm yết bằng cách đi theo các liên kết, rồi dùng AI tạo sinh (LLM) để trích xuất **địa chỉ trụ sở chính, tên người đại diện, vốn điều lệ, tháng/năm thành lập**. Công cụ không dùng selector riêng cho từng site; việc xếp hạng link theo từ khóa giúp xử lý mọi site theo cùng một logic.
 
-So sánh công nghệ và kết quả Bài B xem trong [report.vi.md](report.vi.md).
+So sánh công nghệ và kết quả Bài B xem trong [docs/report.vi.md](docs/report.vi.md).
+
+## 🚀 Live Demo (Streamlit App)
+🔗 **Truy cập trực tuyến:** [https://sales-now.streamlit.app/](https://sales-now.streamlit.app/)
+
+![UI Example 1](result/images/example-01.png)
+![UI Example 2](result/images/example-02.png)
+![UI Example 3](result/images/example-03.png)
 
 ## Yêu cầu
 
@@ -88,7 +97,19 @@ python -m pytest -q tests
 | `result/run_log.json` | Tổng token, chi phí, thời gian và model thực sự trả lời |
 | `result/indeed_probe.json` | Kết quả thí nghiệm Bài B |
 
-## Cách hoạt động
+## Cách hoạt động (Architecture & Flow)
+
+```mermaid
+flowchart TD
+    A[Đầu vào: URL & Tên CTy] -->|Streamlit UI / CSV| B(Fetcher: Playwright/HTTPX)
+    B -->|Cào dữ liệu HTML| C(Page Parser: BeautifulSoup)
+    C -->|Trích xuất & Xếp hạng Link| D{Link Scorer}
+    D -->|Các URL tiềm năng| E(Extractor: litellm)
+    E -->|Prompt Cấu trúc| F[LLM: Gemini/OpenAI]
+    F -->|Dữ liệu JSON thô| G(Normalizer)
+    G -->|Xác thực dẫn chứng & Chuẩn hóa ngày| H[Dữ liệu hoàn chỉnh]
+    H -->|Hiển thị bảng / Xuất file| I[Streamlit UI / JSON / CSV]
+```
 
 1. Thu thập link từ trang chủ và, khi cần, từ các trang con (gồm cả subdomain cùng tên miền gốc).
 2. Xếp hạng link theo từ khóa như 会社概要, 企業情報, corporate, profile.

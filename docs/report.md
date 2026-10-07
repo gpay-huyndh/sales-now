@@ -4,7 +4,21 @@
 
 > 数値は `result/run_log.json`・`result/companies.json`・`result/indeed_probe.json` の実測値です。「推定」と書いた箇所は実測していません。
 
-## 1. サマリー
+## 1. アーキテクチャ (Architecture & Flow)
+
+```mermaid
+flowchart TD
+    A[ユーザー入力: URL & 企業名] -->|Streamlit UI / CSV| B(Fetcher: Playwright/HTTPX)
+    B -->|HTMLスクレイピング| C(Page Parser: BeautifulSoup)
+    C -->|リンク抽出とランク付け| D{Link Scorer}
+    D -->|上位URL| E(Extractor: litellm)
+    E -->|構造化プロンプト| F[LLM: Gemini/OpenAI]
+    F -->|JSONデータ| G(Normalizer)
+    G -->|根拠の検証 & 日付正規化| H[最終抽出データ]
+    H -->|テーブル表示 / エクスポート| I[Streamlit UI / JSON / CSV]
+```
+
+## 1.1 サマリー
 
 | 項目 | 結果 |
 |---|---|

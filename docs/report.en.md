@@ -4,7 +4,21 @@
 
 > Figures come from `result/run_log.json`, `result/companies.json` and `result/indeed_probe.json`. Anything marked "estimate" was NOT measured.
 
-## 1. Summary
+## 1. Architecture
+
+```mermaid
+flowchart TD
+    A[User Input: URL & Name] -->|Streamlit UI / CSV| B(Fetcher: Playwright/HTTPX)
+    B -->|Scrape HTML| C(Page Parser: BeautifulSoup)
+    C -->|Extract & Rank Links| D{Link Scorer}
+    D -->|Top URLs| E(Extractor: litellm)
+    E -->|Structured Prompt| F[LLM: Gemini/OpenAI]
+    F -->|Raw JSON Data| G(Normalizer)
+    G -->|Validate Evidence & Format Date| H[Final Extracted Data]
+    H -->|Render Table / Export| I[Streamlit UI / JSON / CSV]
+```
+
+## 1.1 Summary
 
 | Item | Result |
 |---|---|

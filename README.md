@@ -2,9 +2,18 @@
 
 **言語 / Language:** 日本語（本ファイル） | [English](README.en.md) | [Tiếng Việt](README.vi.md)
 
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white) ![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?logo=streamlit&logoColor=white) ![Playwright](https://img.shields.io/badge/Playwright-Scraper-2EAD33?logo=playwright&logoColor=white) ![LiteLLM](https://img.shields.io/badge/LiteLLM-LLM-blueviolet) ![Gemini](https://img.shields.io/badge/Gemini-AI-8E75B2?logo=google-gemini&logoColor=white)
+
 上場企業10社の公式サイトをリンクを辿ってクロールし、生成AI（LLM）で **本社住所・代表氏名・資本金・設立年月** を抽出します。サイトごとの個別セレクタは使わず、キーワードによるリンク順位付けで汎用的に処理します。
 
-技術選定の比較と課題Bの考察は [report.md](report.md) を参照してください。
+技術選定の比較と課題Bの考察は [docs/report.md](docs/report.md) を参照してください。
+
+## 🚀 ライブデモ (Streamlit App)
+🔗 **オンラインアクセス:** [https://sales-now.streamlit.app/](https://sales-now.streamlit.app/)
+
+![UI Example 1](result/images/example-01.png)
+![UI Example 2](result/images/example-02.png)
+![UI Example 3](result/images/example-03.png)
 
 ## 必要環境
 
@@ -88,7 +97,19 @@ python -m pytest -q tests
 | `result/run_log.json` | 実行全体のトークン数・費用・時間・実際に応答したモデル |
 | `result/indeed_probe.json` | 課題Bの実験結果 |
 
-## 処理の流れ
+## 処理の流れ (Architecture & Flow)
+
+```mermaid
+flowchart TD
+    A[ユーザー入力: URL & 企業名] -->|Streamlit UI / CSV| B(Fetcher: Playwright/HTTPX)
+    B -->|HTMLスクレイピング| C(Page Parser: BeautifulSoup)
+    C -->|リンク抽出とランク付け| D{Link Scorer}
+    D -->|上位URL| E(Extractor: litellm)
+    E -->|構造化プロンプト| F[LLM: Gemini/OpenAI]
+    F -->|JSONデータ| G(Normalizer)
+    G -->|根拠の検証 & 日付正規化| H[最終抽出データ]
+    H -->|テーブル表示 / エクスポート| I[Streamlit UI / JSON / CSV]
+```
 
 1. トップページと、必要に応じて下位ページからリンクを収集（同一ドメインのサブドメインも対象）。
 2. 「会社概要」「企業情報」「corporate」「profile」等のキーワードでリンクを順位付け。

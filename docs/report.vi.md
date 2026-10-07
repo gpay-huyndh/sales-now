@@ -4,7 +4,21 @@
 
 > Số liệu lấy từ `result/run_log.json`, `result/companies.json` và `result/indeed_probe.json`. Chỗ ghi "ước tính" là **chưa đo thực tế**.
 
-## 1. Tóm tắt
+## 1. Kiến trúc (Architecture)
+
+```mermaid
+flowchart TD
+    A[Đầu vào: URL & Tên CTy] -->|Streamlit UI / CSV| B(Fetcher: Playwright/HTTPX)
+    B -->|Cào dữ liệu HTML| C(Page Parser: BeautifulSoup)
+    C -->|Trích xuất & Xếp hạng Link| D{Link Scorer}
+    D -->|Các URL tiềm năng| E(Extractor: litellm)
+    E -->|Prompt Cấu trúc| F[LLM: Gemini/OpenAI]
+    F -->|Dữ liệu JSON thô| G(Normalizer)
+    G -->|Xác thực dẫn chứng & Chuẩn hóa ngày| H[Dữ liệu hoàn chỉnh]
+    H -->|Hiển thị bảng / Xuất file| I[Streamlit UI / JSON / CSV]
+```
+
+## 1.1 Tóm tắt
 
 | Mục | Kết quả |
 |---|---|

@@ -2,9 +2,18 @@
 
 **Language:** [日本語](README.md) | English (this file) | [Tiếng Việt](README.vi.md)
 
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white) ![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?logo=streamlit&logoColor=white) ![Playwright](https://img.shields.io/badge/Playwright-Scraper-2EAD33?logo=playwright&logoColor=white) ![LiteLLM](https://img.shields.io/badge/LiteLLM-LLM-blueviolet) ![Gemini](https://img.shields.io/badge/Gemini-AI-8E75B2?logo=google-gemini&logoColor=white)
+
 Crawls the official websites of 10 listed companies by following links, and uses a generative AI (LLM) to extract the **head office address, representative name, capital, and date of establishment**. It uses no per-site selectors; a keyword-based link ranking handles every site generically.
 
-For the technology comparison and the Task B findings, see [report.en.md](report.en.md).
+For the technology comparison and the Task B findings, see [docs/report.en.md](docs/report.en.md).
+
+## 🚀 Live Demo (Streamlit App)
+🔗 **Online Access:** [https://sales-now.streamlit.app/](https://sales-now.streamlit.app/)
+
+![UI Example 1](result/images/example-01.png)
+![UI Example 2](result/images/example-02.png)
+![UI Example 3](result/images/example-03.png)
 
 ## Requirements
 
@@ -88,7 +97,19 @@ python -m pytest -q tests
 | `result/run_log.json` | Run totals: tokens, cost, time, and the model that actually answered |
 | `result/indeed_probe.json` | Task B experiment results |
 
-## How it works
+## How it works (Architecture & Flow)
+
+```mermaid
+flowchart TD
+    A[User Input: URL & Name] -->|Streamlit UI / CSV| B(Fetcher: Playwright/HTTPX)
+    B -->|Scrape HTML| C(Page Parser: BeautifulSoup)
+    C -->|Extract & Rank Links| D{Link Scorer}
+    D -->|Top URLs| E(Extractor: litellm)
+    E -->|Structured Prompt| F[LLM: Gemini/OpenAI]
+    F -->|Raw JSON Data| G(Normalizer)
+    G -->|Validate Evidence & Format Date| H[Final Extracted Data]
+    H -->|Render Table / Export| I[Streamlit UI / JSON / CSV]
+```
 
 1. Collect links from the top page and, if needed, from sub-pages (subdomains of the same registered domain are included).
 2. Rank links by keywords such as 会社概要, 企業情報, corporate, profile.
