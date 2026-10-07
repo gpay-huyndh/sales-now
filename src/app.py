@@ -58,13 +58,7 @@ TRANSLATIONS = {
         "success": "Hoàn thành trong {time} giây!",
         "success_batch": "Hoàn thành chạy hàng loạt trong {time} giây!",
         "result_title": "Kết quả trích xuất",
-        "fields": [
-            "Địa chỉ trụ sở",
-            "Người đại diện",
-            "Chức danh",
-            "Vốn điều lệ",
-            "Ngày thành lập",
-        ],
+        "fields": ["Địa chỉ trụ sở", "Người đại diện", "Chức danh", "Vốn điều lệ", "Ngày thành lập"],
         "status_ok": "✅",
         "status_warn": "⚠️ (Không thấy trên trang)",
         "status_err": "❌ (Trống)",
@@ -78,6 +72,9 @@ TRANSLATIONS = {
         "tokens": "Số token:",
         "cost": "Chi phí ước tính:",
         "err_unknown": "Đã xảy ra lỗi:",
+        "found_companies": "Tìm thấy **{count}** công ty trong file CSV.",
+        "no_data_csv": "Không có dữ liệu trong file CSV.",
+        "error_company": "Lỗi ở công ty {comp}: {err}"
     },
     "en": {
         "title": "🏢 Sales Now - Company Scraper (Option A)",
@@ -102,13 +99,7 @@ TRANSLATIONS = {
         "success": "Completed in {time} seconds!",
         "success_batch": "Batch processing completed in {time} seconds!",
         "result_title": "Extraction Results",
-        "fields": [
-            "Head Office Address",
-            "Representative Name",
-            "Representative Title",
-            "Capital",
-            "Established Date",
-        ],
+        "fields": ["Head Office Address", "Representative Name", "Representative Title", "Capital", "Established Date"],
         "status_ok": "✅",
         "status_warn": "⚠️ (Not found on page)",
         "status_err": "❌ (Empty)",
@@ -122,6 +113,9 @@ TRANSLATIONS = {
         "tokens": "Tokens:",
         "cost": "Estimated Cost:",
         "err_unknown": "An error occurred:",
+        "found_companies": "Found **{count}** companies in the CSV file.",
+        "no_data_csv": "No data found in the CSV file.",
+        "error_company": "Error at company {comp}: {err}"
     },
     "ja": {
         "title": "🏢 Sales Now - 企業情報スクレイパー (Option A)",
@@ -160,6 +154,9 @@ TRANSLATIONS = {
         "tokens": "トークン数:",
         "cost": "推定コスト:",
         "err_unknown": "エラーが発生しました:",
+        "found_companies": "CSVファイルに**{count}**社の企業が見つかりました。",
+        "no_data_csv": "CSVファイルにデータがありません。",
+        "error_company": "企業 {comp} のエラー: {err}"
     },
 }
 
@@ -319,10 +316,10 @@ with tab2:
         render_result(res)
 
 with tab3:
-    st.write(f"Tìm thấy **{len(company_options)}** công ty trong file CSV.")
+    st.write(t["found_companies"].replace("{count}", str(len(company_options))))
     if st.button(t["extract_batch_btn"], key="btn_batch", type="primary"):
         if not company_options:
-            st.warning("Không có dữ liệu trong file CSV.")
+            st.warning(t["no_data_csv"])
         else:
             progress_bar = st.progress(0)
             status_text = st.empty()
@@ -344,7 +341,7 @@ with tab3:
                     if result:
                         batch_results.append(result)
                 except Exception as e:  # noqa: BLE001
-                    st.error(f"Lỗi ở công ty {comp['name']}: {e}")
+                    st.error(t["error_company"].replace("{comp}", comp["name"]).replace("{err}", str(e)))
                 progress_bar.progress((idx + 1) / total)
 
             duration = round(time.time() - start_time, 1)
